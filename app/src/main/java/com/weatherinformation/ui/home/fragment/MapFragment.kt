@@ -8,6 +8,8 @@ import android.location.Geocoder
 import android.location.Location
 import android.location.LocationManager
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -55,7 +57,7 @@ class MapFragment : BaseFragment(), OnMapReadyCallback {
         moveOnClickListeners()
     }
 
-    private fun setUpToolBar(){
+    private fun setUpToolBar() {
         (activity as HomeActivity).apply {
             goBack()
             setTitle(getString(R.string.title_choose_location))
@@ -86,7 +88,12 @@ class MapFragment : BaseFragment(), OnMapReadyCallback {
     }
 
     private fun enableMyLocation() {
-        if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(
+                requireContext(),
+                Manifest.permission.ACCESS_FINE_LOCATION
+            ) == PackageManager.PERMISSION_GRANTED
+        ) {
+            //Handler(Looper.getMainLooper()).postDelayed({}, 1000)
             googleMap.isMyLocationEnabled = true
             // Get the user's current location
             val location = getLastKnownLocation()
@@ -102,12 +109,19 @@ class MapFragment : BaseFragment(), OnMapReadyCallback {
             }
         } else {
             // Request location permission
-            ActivityCompat.requestPermissions(
-                requireActivity(),
+           requestPermissions(
                 arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
                 REQUEST_LOCATION_PERMISSION
             )
         }
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        enableMyLocation()
     }
 
     private fun getLastKnownLocation(): Location {
