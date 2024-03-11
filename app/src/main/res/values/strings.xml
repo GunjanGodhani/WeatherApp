@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Weather Information</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve"
+        translatable="false">AIzaSyAaQT6SoSM3OTQql0OGNumQL7oz853othI</string>
+    <string name="btn_choose">Choose</string>
+    <string name="label__5_days_forecast">5 Days Forecast</string>
+    <string name="label_current_weather">Current Weather</string>
+    <string name="label_null">--</string>
+    <string name="title_choose_location">Choose Location</string>
+    <string name="title_weather_information">Weather Information</string>
+</resources>

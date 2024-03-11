@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:background="@drawable/bg_ittem_forecast"
+    android:paddingBottom="15dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewTemperature"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/label_null"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewChanceOFRain"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="Temperature"
+        app:layout_constraintStart_toStartOf="@id/textViewTemperature"
+        app:layout_constraintTop_toBottomOf="@id/textViewTemperature"/>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewHumidityValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/label_null"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewHumidity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="Humidity"
+        app:layout_constraintStart_toStartOf="@id/textViewHumidityValue"
+        app:layout_constraintTop_toBottomOf="@id/textViewHumidityValue"/>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewWindValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/label_null"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewWind"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="Wind"
+        app:layout_constraintStart_toStartOf="@id/textViewWindValue"
+        app:layout_constraintTop_toBottomOf="@id/textViewWindValue"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewPressureValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/label_null"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewPressure"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="Pressure"
+        app:layout_constraintStart_toStartOf="@id/textViewPressureValue"
+        app:layout_constraintTop_toBottomOf="@id/textViewPressureValue"/>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewVisibilityValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/label_null"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewVisibility"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="Visibility"
+        app:layout_constraintStart_toStartOf="@id/textViewVisibilityValue"
+        app:layout_constraintTop_toBottomOf="@id/textViewVisibilityValue"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewDescriptionValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/label_null"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewUvIndex"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="Description"
+        app:layout_constraintStart_toStartOf="@id/textViewDescriptionValue"
+        app:layout_constraintTop_toBottomOf="@id/textViewDescriptionValue"/>
+
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flowLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="23dp"
+        app:constraint_referenced_ids="textViewTemperature,textViewHumidityValue,textViewWindValue,textViewPressureValue,textViewVisibilityValue,textViewDescriptionValue"
+        app:flow_horizontalBias="0"
+        app:flow_horizontalGap="18dp"
+        app:flow_horizontalStyle="packed"
+        app:flow_maxElementsWrap="3"
+        app:flow_verticalBias="0"
+        app:flow_verticalGap="50dp"
+        app:flow_wrapMode="chain"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

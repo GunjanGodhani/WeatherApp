@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/radioBtnCurrentWeather"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/bg_radio_button_selector"
+                android:button="@android:color/transparent"
+                android:checked="true"
+                android:gravity="center"
+                android:paddingLeft="12dp"
+                android:paddingTop="3dp"
+                android:paddingRight="12dp"
+                android:paddingBottom="3dp"
+                android:text="@string/label_current_weather"
+                android:textColor="@color/bg_radio_button_text_selector" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/radioBtnForecast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/bg_radio_button_selector"
+                android:button="@android:color/transparent"
+                android:checked="false"
+                android:paddingLeft="12dp"
+                android:paddingTop="3dp"
+                android:paddingRight="12dp"
+                android:paddingBottom="3dp"
+
+                android:text="@string/label__5_days_forecast"
+                android:textColor="@color/bg_radio_button_text_selector" />
+        </RadioGroup>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewCityName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/label_null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/radioGroup" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewTemperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/label_null"
+            app:layout_constraintStart_toStartOf="@id/textViewCityName"
+            app:layout_constraintTop_toBottomOf="@id/textViewCityName" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewStatusOfCloud"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/label_null"
+            app:layout_constraintStart_toStartOf="@id/textViewTemperature"
+            app:layout_constraintTop_toBottomOf="@id/textViewTemperature" />
+
+        <!--This For The Current Weather-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constCurrentWeather"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_ittem_forecast"
+            android:paddingBottom="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewStatusOfCloud"
+            app:layout_constraintVertical_bias="0">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewRain"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/label_null" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewChanceOFRain"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Chance Of Rain"
+                app:layout_constraintStart_toStartOf="@id/textViewRain"
+                app:layout_constraintTop_toBottomOf="@id/textViewRain" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewHumidityValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/label_null" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewHumidity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Humidity"
+                app:layout_constraintStart_toStartOf="@id/textViewHumidityValue"
+                app:layout_constraintTop_toBottomOf="@id/textViewHumidityValue" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewWindValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/label_null" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewWind"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Wind"
+                app:layout_constraintStart_toStartOf="@id/textViewWindValue"
+                app:layout_constraintTop_toBottomOf="@id/textViewWindValue" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewPrecipitationValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/label_null" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewPrecipitation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Precipitation"
+                app:layout_constraintStart_toStartOf="@id/textViewPrecipitationValue"
+                app:layout_constraintTop_toBottomOf="@id/textViewPrecipitationValue" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewPressureValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/label_null" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewPressure"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Pressure"
+                app:layout_constraintStart_toStartOf="@id/textViewPressureValue"
+                app:layout_constraintTop_toBottomOf="@id/textViewPressureValue" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewVisibilityValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/label_null" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewVisibility"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Visibility"
+                app:layout_constraintStart_toStartOf="@id/textViewVisibilityValue"
+                app:layout_constraintTop_toBottomOf="@id/textViewVisibilityValue" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewSunRaiseValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/label_null" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewSunRaise"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Sunrise"
+                app:layout_constraintStart_toStartOf="@id/textViewSunRaiseValue"
+                app:layout_constraintTop_toBottomOf="@id/textViewSunRaiseValue" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewSunSetValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/label_null" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewSunSet"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Sunset"
+                app:layout_constraintStart_toStartOf="@id/textViewSunSetValue"
+                app:layout_constraintTop_toBottomOf="@id/textViewSunSetValue" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewUvIndexValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/label_null" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewUvIndex"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="UV Index"
+                app:layout_constraintStart_toStartOf="@id/textViewUvIndexValue"
+                app:layout_constraintTop_toBottomOf="@id/textViewUvIndexValue" />
+
+
+            <androidx.constraintlayout.helper.widget.Flow
+                android:id="@+id/flowLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="23dp"
+                android:layout_marginTop="12dp"
+                app:constraint_referenced_ids="textViewRain,textViewHumidityValue,textViewWindValue,textViewPrecipitationValue,textViewPressureValue,textViewVisibilityValue,textViewSunRaiseValue,textViewSunSetValue,textViewUvIndexValue"
+                app:flow_horizontalBias="0"
+                app:flow_horizontalGap="18dp"
+                app:flow_horizontalStyle="packed"
+                app:flow_maxElementsWrap="3"
+                app:flow_verticalGap="50dp"
+                app:flow_wrapMode="chain"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <!--This For The 5 day Forecast-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/const5DayForecast"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="15dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewStatusOfCloud">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewForeCast"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:paddingHorizontal="10dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:listitem="@layout/row_item_forecast" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
